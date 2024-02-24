@@ -12,13 +12,6 @@ img {
 	max-width: 3%;
   }
 
-.nav
-{
-	text-decoration: none;
-    color: #000000;
-	width: 1400px;
-	text-align:start;
-}
 
 
 a {
@@ -59,8 +52,8 @@ header::after {
     height: auto;
     background-image: url('img/Shema1.png');
     background-size: cover;
-	padding: 2px 5%;
-	color: rgb(209, 124, 124);
+	padding: 40px 20%;
+	color: rgb(255, 255, 255);
 
   }
   
@@ -218,13 +211,9 @@ label {
   }
 
 .h7 {
-	appearance: none;
-	font-family: 'Advent Pro', sans-serif;
-	border-radius: 100px;
-	background: #4676D7;
-	color: rgb(255, 255, 255);
-	padding: 20px 20px;
-	font-size: 16px;
-	width: calc(250px + (1500 - 250) * ((100vw - 500px) / (1920 - 500))); 
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 3%;
 }
 
