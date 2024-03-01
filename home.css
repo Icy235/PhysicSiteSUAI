@@ -260,19 +260,16 @@ h1 {
 .arrow {
     width: 46px;
     position: absolute;
-    /* transform: scale(-1); */
+	left: 155px;
 }
 #arrow1 {
     top: 25px;
-    left: 155px;
 }
 #arrow2 {
     top: 100px;
-    left: 155px;
 }
 #arrow3 {
     top: 170px;
-    left: 155px;
 }
 .current {
 	color:#4fb743;
@@ -289,4 +286,33 @@ h1 {
 }
 .checkbox-green {
 	margin-bottom: 6px;
+}
+.R_shema {
+	position: absolute; 
+    left: 53px;
+}
+
+#R1_shema {
+	top: 27px;
+}
+#R2_shema {
+	top: 101px;
+}
+#R3_shema {
+	top: 170px;
+}
+
+.E_shema {
+	position: absolute; 
+    left: 214px;
+}
+
+#E1_shema {
+	top: 15px;
+}
+#E2_shema {
+	top: 89px;
+}
+#E3_shema {
+	top: 158px;
 }
