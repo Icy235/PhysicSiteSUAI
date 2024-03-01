@@ -207,11 +207,11 @@ label {
 
 }
 
-.h7 {
+h7 {
 	display: block;
-	width: auto;
-	height: auto;
-	max-width: 3%;
+	/* width: auto; */
+	text-align: left;
+	
 }
 
 
@@ -273,4 +273,20 @@ h1 {
 #arrow3 {
     top: 170px;
     left: 155px;
+}
+.current {
+	color:#4fb743;
+}
+.formula {
+	margin-bottom: 5px;
+	padding-left: 10px;
+}
+.formulas-h {
+	display: block;
+	color:#4fb743;
+	size: 30px;
+	font-weight: 900;
+}
+.checkbox-green {
+	margin-bottom: 6px;
 }
