@@ -1,6 +1,28 @@
 
 // Получаю данные из текстбоксов
 document.addEventListener("DOMContentLoaded", function () {
+  // при вводе R значение выводится на схему
+  document.querySelector("#R1").addEventListener('input', () => {
+    document.querySelector('#R1_shema_value').innerHTML = document.querySelector("#R1").value;
+  })
+  document.querySelector("#R2").addEventListener('input', () => {
+    document.querySelector('#R2_shema_value').innerHTML = document.querySelector("#R2").value;
+  })
+  document.querySelector("#R3").addEventListener('input', () => {
+    document.querySelector('#R3_shema_value').innerHTML = document.querySelector("#R3").value;
+  })
+
+  // при вводе E значение выводится на схему
+  document.querySelector("#E1").addEventListener('input', () => {
+    document.querySelector('#E1_shema_value').innerHTML = document.querySelector("#E1").value;
+  })
+  document.querySelector("#E2").addEventListener('input', () => {
+    document.querySelector('#E2_shema_value').innerHTML = document.querySelector("#E2").value;
+  })
+  document.querySelector("#E3").addEventListener('input', () => {
+    document.querySelector('#E3_shema_value').innerHTML = document.querySelector("#E3").value;
+  })
+      
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#x").addEventListener('input', () => {
       let data = +document.querySelector("#x").value;
@@ -23,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     myElement.addEventListener('click', function () {
       console.log('Element was clicked!');
     });
+ 
+    
   });
 
   
@@ -94,12 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.out6').innerHTML = I2;
     document.querySelector('.out7').innerHTML = I3;
 
-
   });
 
 });
-
-
-
-
-
