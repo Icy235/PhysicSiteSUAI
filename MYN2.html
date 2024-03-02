@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/MynMn2.css">
-    <script src="home.js"></script>
-    <script src="MYN3.js"></script> 
+    <script src="js/MYN2.js"></script> 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <!--------Формулы MathJAX------>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -112,9 +111,14 @@
                     <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
                 </label>
             </div>
+
+
+
+
             <div class="buttondiv">
                 <button type="submit" class="button">Расчет</button>
-            </div>
+
+            <!-- </div>
         </form>
         <div id="shema-wrapper">
             <img id="shema" src="img/Shema.png">
@@ -124,42 +128,34 @@
             <span class="R_shema" id="R2_shema"><span id="R2_shema_value">1</span> Ом</span>
             <span class="E_shema" id="E1_shema">E1 = <span id="E1_shema_value">12</span> В</span>
             <span class="E_shema" id="E2_shema">E2 = <span id="E2_shema_value">127</span> В</span>
-        </div>
+        </div> -->
+
         <h7>
             <!--------Формулы MathJAX------>
             
             <!--------Первый источник------>
             <span class="formulas-h">1.</span>
-            <div class="formula">\(R_{||}= {R_2 * R_3 \over R_2 + R_3 }=\)   <span class="out11"> </span></div>
+            
             <div class="formula">\(R_э = R_{||} + R_1=\)                     <span class="out21"> </span></div>  <!--------out1(1) - Первый источник------>
             <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\)         <span class="out31"> </span></div>   <!--------В js не дает скобки поставить------>
             <div class="formula">\(U_{ab} = I_1 * R_{||}=\)                  <span class="out41"> </span></div>
             <div class="formula">\(I_2 = {U_{ab} \over R_2}=\)               <span class="out51"> </span></div>
-            <div class="formula">\(I_3 = {U_{ab} \over R_3}=\)               <span class="out61"> </span></div>
+
             
             <!--------Второй источник------>
             <span class="formulas-h">2.</span>
-            <div class="formula">\(R_{||}= {R_1 * R_3 \over R_1 + R_3 }=\)    <span class="out12"> </span></div>
+           
             <div class="formula">\(R_э = R_{||} + R_3=\)                      <span class="out22"> </span></div>
             <div class="formula">\(I_2 = {E_1 \over R_э + r_{02}}=\)          <span class="out32"> </span></div> <!--------out1 (2) - Второй источник------>
             <div class="formula">\(U_{ab} = I_2 * R_{||}=\)                   <span class="out42"> </span></div>
             <div class="formula">\(I_1 = {U_{ab} \over R_1}=\)                <span class="out52"> </span></div>
-            <div class="formula">\(I_3 = {U_{ab} \over R_3}=\)                <span class="out62"> </span></div>
-            
-            <!--------Третий источник------>
-            <span class="formulas-h">3.</span>
-            <div class="formula">\(R_{||}= {R_1 * R_2 \over R_1 + R_2 }=\)    <span class="out13"> </span></div>
-            <div class="formula">\(R_э = R_{||} + R_3=\)                      <span class="out23"> </span></div>
-            <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\)          <span class="out33"> </span></div> <!--------out1 (3) - Третий источник------>
-            <div class="formula">\(U_{ab} = I_3 * R_{||}=\)                   <span class="out43"> </span></div>
-            <div class="formula">\(I_1 = {U_{ab} \over R_1}=\)                <span class="out53"> </span></div>
-            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\)                <span class="out63"> </span></div>
-            
+          
+
             <!--------Результат------>
             <span class="formulas-h">РЕЗУЛЬТАТ</span>
             <div class="formula">\(I_1 = \)  <span class="out1"> </span></div> 
             <div class="formula">\(I_2 = \) <span class="out2"> </span></div> 
-            <div class="formula">\(I_3 = \) <span class="out3"> </span></div>
+       
         </h7>
 
         </form>

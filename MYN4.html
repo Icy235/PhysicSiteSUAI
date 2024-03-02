@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/MynMn4.css">
-    <script src="home.js"></script>
-    <script src="MYN3.js"></script> 
+    <script src="js/MYN4.js"></script> 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <!--------Формулы MathJAX------>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -52,117 +51,118 @@
     <div id="work">
         <form action="Result.html" method="post">
 
-            <!-- Инпут резисторов -->
-            <div class="input-containerU">
-                <label for="input1">Первая ветка:
-                    <input type="number" step="any" id="x" name="input1" value="11.2"> <!-- Исправлен id на "input1" -->
-                </label>
+          <!-- Инпут резисторов -->
+          <div class="input-containerU">
+            <label for="input1">Первая ветка:
+                <input type="number" step="any" id="x" name="input1" value="11.2"> <!-- Исправлен id на "input1" -->
+            </label>
 
-                <label for="input2">Вторая ветка:
-                    <input type="number" step="any" id="y" name="input2" value="30">
-                </label>
+            <label for="input2">Вторая ветка:
+                <input type="number" step="any" id="y" name="input2" value="30">
+            </label>
 
-                <label for="input3">Третья ветка:
-                    <input type="number" step="any" id="z" name="input3" value="22.8">
-                </label>
+            <label for="input3">Третья ветка:
+                <input type="number" step="any" id="z" name="input3" value="22.8">
+            </label>
 
-                <label for="input3">Четвертая ветка:
-                    <input type="number" step="any" id="z" name="input3" value="22.8">
-                </label>
-            </div>
+            <label for="input40">Четвертая ветка:
+                <input type="number" step="any" id="w" name="input40" value="22.8">
+            </label>
+        </div>
 
-            <!-- Инпут E источника -->
-            <div class="input-containerE">
-                <label for="input4">E1:
-                    <input type="number" step="any" id="E1" name="input4" value="12">
-                </label>
+        <!-- Инпут E источника -->
+        <div class="input-containerE">
+            <label for="input4">E1:
+                <input type="number" step="any" id="E1" name="input4" value="12">
+            </label>
 
-                <label for="input5">E2:
-                    <input type="number" step="any" id="E2" name="input5" value="127">
-                </label>
+            <label for="input5">E2:
+                <input type="number" step="any" id="E2" name="input5" value="127">
+            </label>
 
-                <label for="input6">E3:
-                    <input type="number" step="any" id="E3" name="input6" value="36">
-                </label>
+            <label for="input6">E3:
+                <input type="number" step="any" id="E3" name="input6" value="36">
+            </label>
 
-                <label for="input6">E4:
-                    <input type="number" step="any" id="E4" name="input7" value="36">
-                </label>
-            </div>
+            <label for="input60">E4:
+                <input type="number" step="any" id="E4" name="input60" value="36">
+            </label>
+        </div>
 
-            <!-- Инпут сопротивления источника -->
-            <div class="input-containerR">
-                <label for="input7">R1 источника:
-                    <input type="number" step="any" id="R1" name="input8" value="1">
-                </label>
+        <!-- Инпут сопротивления источника -->
+        <div class="input-containerR">
+            <label for="input7">R1 источника:
+                <input type="number" step="any" id="R1" name="input7" value="1">
+            </label>
 
-                <label for="input8">R2 источника:
-                    <input type="number" step="any" id="R2" name="input9" value="1">
-                </label>
+            <label for="input8">R2 источника:
+                <input type="number" step="any" id="R2" name="input8" value="1">
+            </label>
 
-                <label for="input9">R3 источника:
-                    <input type="number" step="any" id="R3" name="input10" value="1">
-                </label>
+            <label for="input9">R3 источника:
+                <input type="number" step="any" id="R3" name="input9" value="1">
+            </label>
 
-                <label for="input9">R4 источника:
-                    <input type="number" step="any" id="R4" name="input11" value="1">
-                </label>
-            </div>
-            <!-- Выбор направления источника-->
-            <div class="input-containerO">
-                <label class="checkbox-green"><span>Источник 1:</span>
-                    <input type="checkbox" value='1' checked onchange="this.value = this.checked ? '1' : '-1';
+            <label for="input90">R4 источника:
+                <input type="number" step="any" id="R4" name="input90" value="1">
+            </label>
+        </div>
+        <!-- Выбор направления источника-->
+        <div class="input-containerO">
+            <label class="checkbox-green"><span>Источник 1:</span>
+                <input type="checkbox" value='1' checked onchange="this.value = this.checked ? '1' : '-1';
+                if (this.checked) {
+                    document.querySelector('#arrow1').style.transform = 'scale(1)'; 
+                    console.log('1 checked')
+                } else {
+                    document.querySelector('#arrow1').style.transform = 'scale(-1)'; 
+                    console.log('1 checked')
+                }
+            " id="counter1">
+                <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
+            </label>
+
+            <label class="checkbox-green"><span>Источник 2:</span>
+                <input type="checkbox" value='1' checked onchange="this.value = this.checked ? '1' : '-1';
+                if (this.checked) {
+                    document.querySelector('#arrow2').style.transform = 'scale(1)'; 
+                    console.log('2 checked')
+                } else {
+                    document.querySelector('#arrow2').style.transform = 'scale(-1)'; 
+                    console.log('2 checked')
+                }
+                " , id="counter2">
+                <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
+            </label>
+
+            <label class="checkbox-green"><span>Источник 3:</span>
+                <input type="checkbox" checked value='1' onchange="this.value = this.checked ? '1' : '-1';
                     if (this.checked) {
-                        document.querySelector('#arrow1').style.transform = 'scale(1)'; 
-                        console.log('1 checked')
-                    } else {
-                        document.querySelector('#arrow1').style.transform = 'scale(-1)'; 
-                        console.log('1 checked')
-                    }
-                " id="counter1">
-                    <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
-                </label>
+                    document.querySelector('#arrow3').style.transform = 'scale(1)'; 
+                } else {
+                    document.querySelector('#arrow3').style.transform = 'scale(-1)'; 
+                }
+                " , id="counter3">
+                <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
+            </label>
 
-                <label class="checkbox-green"><span>Источник 2:</span>
-                    <input type="checkbox" value='1' checked onchange="this.value = this.checked ? '1' : '-1';
+            <label class="checkbox-green"><span>Источник 4:</span>
+                <input type="checkbox" checked value='1' onchange="this.value = this.checked ? '1' : '-1';
                     if (this.checked) {
-                        document.querySelector('#arrow2').style.transform = 'scale(1)'; 
-                        console.log('2 checked')
-                    } else {
-                        document.querySelector('#arrow2').style.transform = 'scale(-1)'; 
-                        console.log('2 checked')
-                    }
-                    " , id="counter2">
-                    <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
-                </label>
+                    document.querySelector('#arrow4').style.transform = 'scale(1)'; 
+                } else {
+                    document.querySelector('#arrow4').style.transform = 'scale(-1)'; 
+                }
+                " , id="counter4">
+                <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
+            </label>
+        </div>
 
-                <label class="checkbox-green"><span>Источник 3:</span>
-                    <input type="checkbox" checked value='1' onchange="this.value = this.checked ? '1' : '-1';
-                        if (this.checked) {
-                        document.querySelector('#arrow3').style.transform = 'scale(1)'; 
-                    } else {
-                        document.querySelector('#arrow3').style.transform = 'scale(-1)'; 
-                    }
-                    " , id="counter3">
-                    <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
-                </label>
-
-                <label class="checkbox-green"><span>Источник 4:</span>
-                    <input type="checkbox" checked value='1' onchange="this.value = this.checked ? '1' : '-1';
-                        if (this.checked) {
-                        document.querySelector('#arrow4').style.transform = 'scale(1)'; 
-                    } else {
-                        document.querySelector('#arrow4').style.transform = 'scale(-1)'; 
-                    }
-                    " , id="counter4">
-                    <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
-                </label>
-            </div>
             <div class="buttondiv">
                 <button type="submit" class="button">Расчет</button>
             </div>
         </form>
-        <div id="shema-wrapper">
+        <!-- <div id="shema-wrapper">
             <img id="shema" src="img/Shema.png">
             <img class="arrow" id="arrow1" src="img/arrow.jpg">
             <img class="arrow" id="arrow2" src="img/arrow.jpg">
@@ -176,7 +176,7 @@
             <span class="E_shema" id="E2_shema">E2 = <span id="E2_shema_value">127</span> В</span>
             <span class="E_shema" id="E3_shema">E3 = <span id="E3_shema_value">36</span> В</span>
             <span class="E_shema" id="E4_shema">E4 = <span id="E4_shema_value">36</span> В</span>
-        </div>
+        </div> -->
         <h7>
             <!--------Формулы MathJAX------>
             
@@ -206,12 +206,24 @@
             <div class="formula">\(U_{ab} = I_3 * R_{||}=\)                   <span class="out43"> </span></div>
             <div class="formula">\(I_1 = {U_{ab} \over R_1}=\)                <span class="out53"> </span></div>
             <div class="formula">\(I_2 = {U_{ab} \over R_2}=\)                <span class="out63"> </span></div>
+            <div class="formula">\(I_4 = {U_{ab} \over R_4}=\)                <span class="out73"> </span></div>
+<!---В работе-->
+             <!--------Четвертый источник------>
+             <span class="formulas-h">4.</span>
+             <div class="formula">\(R_{||}= {R_1 * R_2 \over R_1 + R_2 }=\)    <span class="out14"> </span></div><!--------out1 (4) - Четвертый источник------>
+             <div class="formula">\(R_э = R_{||} + R_3=\)                      <span class="out24"> </span></div>
+             <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\)          <span class="out34"> </span></div> 
+             <div class="formula">\(U_{ab} = I_3 * R_{||}=\)                   <span class="out44"> </span></div>
+             <div class="formula">\(I_1 = {U_{ab} \over R_1}=\)                <span class="out54"> </span></div>
+             <div class="formula">\(I_2 = {U_{ab} \over R_2}=\)                <span class="out64"> </span></div>
+             <div class="formula">\(I_2 = {U_{ab} \over R_2}=\)                <span class="out74"> </span></div>
             
             <!--------Результат------>
             <span class="formulas-h">РЕЗУЛЬТАТ</span>
             <div class="formula">\(I_1 = \)  <span class="out1"> </span></div> 
             <div class="formula">\(I_2 = \) <span class="out2"> </span></div> 
             <div class="formula">\(I_3 = \) <span class="out3"> </span></div>
+            <div class="formula">\(I_4 = \) <span class="out4"> </span></div>
             
         </h7>
 

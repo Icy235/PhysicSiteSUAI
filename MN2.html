@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/MynMn2.css">
-    <script src="home.js"></script>
-    <script src="MYN2.js"></script> 
+    <script src="js/MN2.js"></script> 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <!--------Формулы MathJAX------>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -116,7 +115,7 @@
                 <button type="submit" class="button">Расчет</button>
             </div>
         </form>
-        <div id="shema-wrapper">
+        <!-- <div id="shema-wrapper">
             <img id="shema" src="img/Shema.png">
             <img class="arrow" id="arrow1" src="img/arrow.jpg">
             <img class="arrow" id="arrow2" src="img/arrow.jpg">
@@ -124,17 +123,16 @@
             <span class="R_shema" id="R2_shema"><span id="R2_shema_value">1</span> Ом</span>
             <span class="E_shema" id="E1_shema">E1 = <span id="E1_shema_value">12</span> В</span>
             <span class="E_shema" id="E2_shema">E2 = <span id="E2_shema_value">127</span> В</span>
-        </div>
+        </div> -->
         <h7>
             <!--------Формулы MathJAX------>
             
-            <div class="formula"> \( g_1 = {1\over {(R_1 + r_{01} +R_2)}}=\) <span class="out2"> </span></div>
-            <div class="formula">\( g_2 = {1\over {(R_3 + r_{02} +R_4)}}=\) <span class="out3"></span></div>
-            <div class="formula">\( g_3 = {1\over {(R_5 + r_{03} +R_6)}}=\) <span class="out4"> </span></div>
-            <div class="formula">\(U_{ab} = {{\pm E_1 * g_1 \pm E_2 * g_2 \pm E_3 * g3} \over {g_1 + g_2 + g_3}} = \) <span class="out1"></span></div>
-            <div class="formula">\(I_1 = {(E_1 - U_{ab}) + g_1} =\) <span class="out5"> </span></div>
-            <div class="formula">\( I_2 = {(E_2 - U_{ab}) + g_2} =\) <span class="out6"> </span></div>
-            <div class="formula">\(I_3 = {(E_3 - U_{ab}) + g_3} =\) <span class="out7"> </span></div>
+            <div class="formula"> \( g_1 = {1\over {(R_1 + r_{01} +R_2)}}=\)                                   <span class="out1"> </span></div>
+            <div class="formula">\( g_2 = {1\over {(R_3 + r_{02} +R_4)}}=\)                                    <span class="out2"></span></div>
+            <div class="formula">\(U_{ab} = {{\pm E_1 * g_1 \pm E_2 * g_2 } \over {g_1 + g_2 }} = \)           <span class="out3"></span></div>
+            <div class="formula">\(I_1 = {(E_1 - U_{ab}) + g_1} =\)                                            <span class="out4"> </span></div>
+            <div class="formula">\( I_2 = {(E_2 - U_{ab}) + g_2} =\)                                           <span class="out5"> </span></div>
+      
         </h7>
 
         </form>
