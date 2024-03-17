@@ -1,5 +1,5 @@
 
-// Получаю данные из текстбоксов
+
 document.addEventListener("DOMContentLoaded", function () {
   // при вводе R значение выводится на схему
   document.querySelector("#R1").addEventListener('input', () => {

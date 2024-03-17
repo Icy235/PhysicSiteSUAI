@@ -1,5 +1,5 @@
 
-// Получаю данные из текстбоксов
+
 document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelector("#x").addEventListener('input', () => {

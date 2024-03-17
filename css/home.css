@@ -40,7 +40,7 @@ header::after {
 
 	width: auto;
 	height: auto;
-	background-image: url('img/Shema1.png');
+	background-image: url('img/Shema1.jpg');
 	background-size: cover;
 	padding: 40px 20%;
 	color: rgb(255, 255, 255);
@@ -166,7 +166,7 @@ body {
 
 label {
 	height: 50px;
-	float: left;
+	margin-right: 11px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -175,21 +175,6 @@ label {
 .input {
 	margin-bottom: 10px;
 	padding: 2px;
-}
-
-.input-containerE {
-	float: left;
-}
-
-.input-containerR {
-	float: left;
-
-}
-
-.input-containerO {
-	text-align: top;
-	float: left;
-	padding: 15px 0;
 }
 
 .button {
@@ -255,4 +240,19 @@ h1 {
 
 .checkbox-green {
 	margin-bottom: 6px;
+}
+
+.input-container {
+	min-height: 50px;
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+input {
+	width: 95px;
+}
+
+.input-container-wrapper {
+	display: inline-block;
 }

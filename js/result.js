@@ -1,31 +1,6 @@
 
-// Получаю данные из текстбоксов
+
 document.addEventListener("DOMContentLoaded", function () {
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelector("#x").addEventListener('input', () => {
-        let data = +document.querySelector("#x").value;
-        document.querySelector("#output1").innerHTML = data;
-        document.querySelector("#x").value = 123;
-      });
-      document.querySelector("#y").addEventListener('input', () => {
-        let data = +document.querySelector("#y").value;
-        document.querySelector("#output2").innerHTML = data;
-        document.querySelector("#y").value = 123;
-      });
-  
-      document.querySelector("#z").addEventListener('input', () => {
-        let data = +document.querySelector("#z").value;
-        document.querySelector("#output3").innerHTML = data;
-        document.querySelector("#z").value = 123;
-      });
-  
-      var myElement = document.getElementById('myElement');
-      myElement.addEventListener('click', function () {
-        console.log('Element was clicked!');
-      });
-    });
-  
-    
     document.querySelector('form').addEventListener("submit", (event) => {
       event.preventDefault();
       const form = document.querySelector('form');
