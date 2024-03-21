@@ -25,70 +25,52 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('form').addEventListener("submit", (event) => {
     event.preventDefault();
     const form = document.querySelector('form');
-    // Расчет
+    // проводимости ветвей
+    const g1 = +(1/(R1.value+r1.value)).toFixed(3)
+    const g2 = +(1/(R2.value+r2.value)).toFixed(3)
+    const g3 = +(1/(R3.value+r3.value)).toFixed(3)
+    console.log('g1, g2, g3 = ', g1, g2, g3)
+    console.log('counter1,2,3 = ', counter1.value, counter2.value, counter3.value)
 
-    const R1val = +(R1.value)
-    const R2val = +(R2.value)
-    const R3val = +(R3.value)
-    const E1val = +(E1.value)
-    const E2val = +(E2.value)
-    const E3val = +(E3.value)
-    const x1 = +(x.value) + R1val
-    const y2 = +(y.value) + R2val
-    const z3 = +(z.value) + R3val
-    const g1 = +((1 / x1).toFixed(3));
-    const g2 = +((1 / y2).toFixed(3));
-    const g3 = +((1 / z3).toFixed(3));
-    const o1 = Number(counter1.value);
-    const o2 = Number(counter2.value);
-    const o3 = Number(counter3.value);
-    const E1o1 = o1 * E1val
-    const E2o2 = o2 * E2val
-    const E3o3 = o3 * E3val
+    //U 
+    const E1_val = E1.value*counter1.value //потом надо все в формулы выводить и над стилизацией поработать
+    const E2_val = E2.value*counter2.value
+    const E3_val = E3.value*counter3.value
+    const U = ((E1_val*g1 + E2_val*g2 + E3_val*g3)/(g1+g2+g3)).toFixed(2)
 
-    // Вычисление формулы
-    // U_ab
-    let result = +(((E1o1 * g1 + E2o2 * g2 + E3o3 * g3) / (g1 + g2 + g3)).toFixed(2));
-    // g
-    let I1 = +(((E1o1 - result) * g1).toFixed(2));
-    let I2 = +(((E2o2 - result) * g2).toFixed(2));
-    let I3 = +(((E3o3 - result) * g3).toFixed(2));
+    console.log('U after = ', U)
 
-    // Вывод результата в консоль
-    console.log("Первая ветка: ", x.value);
-    console.log("Вторая ветка: ", form.elements.input2.value);
-    console.log("Третья ветка: ", form.elements.input3.value);
-    console.log("E1: ", E1val);
-    console.log("E2: ", E2val);
-    console.log("E3: ", E3val);
-    console.log("R1: ", R1val);
-    console.log("R2: ", R2val);
-    console.log("R3: ", R3val);
-    console.log("Cтрелка 1 источника: ", o1);
-    console.log("Cтрелка 2 источника: ", o2);
-    console.log("Cтрелка 3 источника: ", o3);
-    console.log("x1: ", x1);
-    console.log("y2: ", y2);
-    console.log("z3 ", z3);
-    console.log("g1: ", g1);
-    console.log("g2: ", g2);
-    console.log("g3: ", g3);
-    console.log("Результат вычисления формулы Uab:", result);
-    console.log("Результат вычисления формулы I1:", I1);
-    console.log("Результат вычисления формулы I2:", I2);
-    console.log("Результат вычисления формулы I3:", I3);
+    //ток для каждой ветви
+    const I1 = ((E1_val-U)*g1).toFixed(2)
+    const I2 = ((E2_val-U)*g2).toFixed(2)
+    const I3 = ((E3_val-U)*g3).toFixed(2)
+    console.log('I1, I2, I3 =', I1, I2, I3)
+    
+    // // Вывод результата и промежуточных вычислений в текст
+    // document.querySelectorAll('.formulas_table').style.display = 'inline-block'
+    const formulas = console.log(document.querySelectorAll('.formulas_table'))
+    formulas.forEach(item => {
+      item.style.display = 'inline-block'
+    });
+    document.querySelector('.equals').style.display = 'inline-block'
 
+    document.querySelector('#R1_formula').innerHTML = R1.value;
+    document.querySelector('#r1_formula').innerHTML = r1.value;
+    document.querySelector('#g1_formula').innerHTML = g1;
+    
+    document.querySelector('#R2_formula').innerHTML = R2.value;
+    document.querySelector('#r2_formula').innerHTML = r2.value;
+    document.querySelector('#g2_formula').innerHTML = g2;
 
-    console.log("---------------------------------------------------");
+    document.querySelector('#R3_formula').innerHTML = R3.value;
+    document.querySelector('#r3_formula').innerHTML = r3.value;
+    document.querySelector('#g3_formula').innerHTML = g3;
 
-    // Вывод результата в текст
-    document.querySelector('.out1').innerHTML = result;
-    document.querySelector('.out2').innerHTML = g1;
-    document.querySelector('.out3').innerHTML = g2;
-    document.querySelector('.out4').innerHTML = g3;
-    document.querySelector('.out5').innerHTML = I1;
-    document.querySelector('.out6').innerHTML = I2;
-    document.querySelector('.out7').innerHTML = I3;
+    
+    // document.querySelector('.out4').innerHTML = g3;
+    // document.querySelector('.out5').innerHTML = I1;
+    // document.querySelector('.out6').innerHTML = I2;
+    // document.querySelector('.out7').innerHTML = I3;
 
   });
 });

@@ -54,17 +54,17 @@
             <!-- Инпут резисторов -->
             <div class="input-container-wrapper">
                 <div class="input-container input-containerU">
-                    <label for="input1">Первая ветка:
-                        <input type="number" step="any" id="x" name="input1" value="11.2">
+                    <label for="input1">R1:
+                        <input type="number" step="any" id="R1" name="input1" value="4.7">
                         
                     </label>
 
-                    <label for="input2">Вторая ветка:
-                        <input type="number" step="any" id="y" name="input2" value="30">
+                    <label for="input2">R2:
+                        <input type="number" step="any" id="R2" name="input2" value="6.9">
                     </label>
 
-                    <label for="input3">Третья ветка:
-                        <input type="number" step="any" id="z" name="input3" value="22.8">
+                    <label for="input3">R3:
+                        <input type="number" step="any" id="R3" name="input3" value="8.3">
                     </label>
                 </div>
 
@@ -74,15 +74,15 @@
 
                 <div class="input-container input-containerE">
                     <label for="input4">E1:
-                        <input type="number" step="any" id="E1" name="input4" value="12">
+                        <input type="number" step="any" id="E1" name="input4" value="26">
                     </label>
 
                     <label for="input5">E2:
-                        <input type="number" step="any" id="E2" name="input5" value="127">
+                        <input type="number" step="any" id="E2" name="input5" value="360">
                     </label>
 
                     <label for="input6">E3:
-                        <input type="number" step="any" id="E3" name="input6" value="36">
+                        <input type="number" step="any" id="E3" name="input6" value="127">
                     </label>
                 </div>
 
@@ -90,16 +90,16 @@
                 <!-- Инпут сопротивления источника -->
 
                 <div class="input-container input-containerR">
-                    <label for="input7">R1 источника:
-                        <input type="number" step="any" id="R1" name="input7" value="1">
+                    <label for="input7">r01:
+                        <input type="number" step="any" id="r1" name="input7" value="1">
                     </label>
 
-                    <label for="input8">R2 источника:
-                        <input type="number" step="any" id="R2" name="input8" value="1">
+                    <label for="input8">r02:
+                        <input type="number" step="any" id="r2" name="input8" value="2">
                     </label>
 
-                    <label for="input9">R3 источника:
-                        <input type="number" step="any" id="R3" name="input9" value="1">
+                    <label for="input9">r03:
+                        <input type="number" step="any" id="r3" name="input9" value="3">
                     </label>
                 </div>
             </div>
@@ -165,15 +165,49 @@
         </div>
         <h7>
             <!--------Формулы MathJAX------>
-            <div class="formula"> \( g_1 = {1\over {(R_1 + r_{01} +R_2)}}=\) <span class="out2"> </span></div>
-            <div class="formula">\( g_2 = {1\over {(R_3 + r_{02} +R_4)}}=\) <span class="out3"></span></div>
-            <div class="formula">\( g_3 = {1\over {(R_5 + r_{03} +R_6)}}=\) <span class="out4"> </span></div>
-            <div class="formula">\(U_{ab} = {{\pm E_1 * g_1 \pm E_2 * g_2 \pm E_3 * g3} \over {g_1 + g_2 + g_3}} = \)
-                <span class="out1"></span>
+            <div class="formula"> \( g_1 = {1\over {(R_1 + r_{01})}}=\) 
+                <table class="formulas_table">
+                    <tr>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span id="R1_formula"></span> + <span id="r1_formula"></span></td>
+                    </tr>
+                </table> <span class="equals">\( = \)</span> <span id="g1_formula"></span>
+</div>
+            <div class="formula">\( g_2 = {1\over {(R_2 + r_{02})}}=\) 
+                <table class="formulas_table">
+                    <tr>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span id="R2_formula"></span> + <span id="r2_formula"></span></td>
+                    </tr>
+                </table> <span class="equals">\( = \)</span> <span id="g2_formula"></span>
             </div>
-            <div class="formula">\(I_1 = {(E_1 - U_{ab}) + g_1} =\) <span class="out5"> </span></div>
-            <div class="formula">\( I_2 = {(E_2 - U_{ab}) + g_2} =\) <span class="out6"> </span></div>
-            <div class="formula">\(I_3 = {(E_3 - U_{ab}) + g_3} =\) <span class="out7"> </span></div>
+            <div class="formula">\( g_3 = {1\over {(R_3 + r_{03})}}=\)  
+                <table class="formulas_table">
+                    <tr>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span id="R3_formula"></span> + <span id="r3_formula"></span></td>
+                    </tr>
+                </table> <span class="equals">\( = \)</span> <span id="g3_formula"></span>
+            </div>
+            <div class="formula">\(U_{ab} = {{\pm E_1 * g_1 \pm E_2 * g_2 \pm E_3 * g3} \over {g_1 + g_2 + g_3}} = \)
+                <table class="formulas_table">
+                    <tr>
+                        <td><span id="E1_formula"></span>*<span id="g1_formula"></span> + <span id="E2_formula"></span>*<span id="g2_formula"></span> + <span id="E3_formula"></span>*<span id="g3_formula"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span id="g1_formula"></span> + <span id="g2_formula"></span> + <span id="g3_formula"></span></td>
+                    </tr>
+                </table> <span class="equals">\( = \)</span> <span id="U_formula"></span>
+            </div>
+            <div class="formula">\(I_1 = {(E_1 - U_{ab}) + g_1} =\) </div>
+            <div class="formula">\( I_2 = {(E_2 - U_{ab}) + g_2} =\) </div>
+            <div class="formula">\(I_3 = {(E_3 - U_{ab}) + g_3} =\) </div>
         </h7>
 
     </div>

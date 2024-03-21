@@ -19,19 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('form').addEventListener("submit", (event) => {
     event.preventDefault();
     const form = document.querySelector('form');
-    // Расчет
+    // проводимость каждой ветви
+    const g1 = (1 / x1).toFixed(3);
+    const g2 = (1 / y2).toFixed(3);
 
-    const R1val = +(R1.value)
-    const R2val = +(R2.value)
+    const R1val = R1.value
+    const R2val = R2.value
 
-    const E1val = +(E1.value)
-    const E2val = +(E2.value)
+    const E1val = E1.value
+    const E2val = E2.value
 
-    const x1 = +(x.value) + R1val
-    const y2 = +(y.value) + R2val
+    const x1 = x.value + R1val
+    const y2 = y.value + R2val
 
-    const g1 = +((1 / x1).toFixed(3));
-    const g2 = +((1 / y2).toFixed(3));
+
 
     const o1 = Number(counter1.value);
     const o2 = Number(counter2.value);
@@ -42,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Вычисление формулы
     // U_ab
-    let result = +(((E1o1 * g1 + E2o2 * g2) / (g1 + g2)).toFixed(2));
+    let result = ((E1o1 * g1 + E2o2 * g2) / (g1 + g2)).toFixed(2);
     // g
-    let I1 = +(((E1o1 - result) * g1).toFixed(2));
-    let I2 = +(((E2o2 - result) * g2).toFixed(2));
+    let I1 = ((E1o1 - result) * g1).toFixed(2);
+    let I2 = ((E2o2 - result) * g2).toFixed(2);
 
     // Вывод результата в консоль
     console.log("Первая ветка: ", x.value);
