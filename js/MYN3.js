@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector('form').addEventListener("submit", (event) => {
     event.preventDefault();
-    const form = $('form');
+
     // проводимости ветвей
     const g1 = +(1/($("#R1").val()+$("#r1").val())).toFixed(3)
     const g2 = +(1/($("#R2").val()+$("#r2").val())).toFixed(3)
