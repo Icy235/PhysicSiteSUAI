@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoa)ded", function () {
   // при вводе R значение выводится на схему
-  R1.addEventListener('input', () => {
-    document.querySelector('#R1_shema_value').innerHTML = R1.value;
+  document.querySelector("#R1").addEventListener('input', () => {
+    document.querySelector('#R1_shema_value').innerHTML = document.querySelector("#R1").value;
   })
-  R2.addEventListener('input', () => {
-    document.querySelector('#R2_shema_value').innerHTML = R2.value;
+  document.querySelector("#R2").addEventListener('input', () => {
+    document.querySelector('#R2_shema_value').innerHTML = document.querySelector("#R2").value;
   })
-  R3.addEventListener('input', () => {
-    document.querySelector('#R3_shema_value').innerHTML = R3.value;
+  document.querySelector("#R3").addEventListener('input', () => {
+    document.querySelector('#R3_shema_value').innerHTML = document.querySelector("#R3").value;
   })
 
   // при вводе E значение выводится на схему
-  E1.addEventListener('input', () => {
-    document.querySelector('#E1_shema_value').innerHTML = E1.value;
+  document.querySelector("#E1").addEventListener('input', () => {
+    document.querySelector('#E1_shema_value').innerHTML = document.querySelector("#E1").value;
   })
-  E2.addEventListener('input', () => {
-    document.querySelector('#E2_shema_value').innerHTML = E2.value;
+  document.querySelector("#E2").addEventListener('input', () => {
+    document.querySelector('#E2_shema_value').innerHTML = document.querySelector("#E2").value;
   })
-  E3.addEventListener('input', () => {
-    document.querySelector('#E3_shema_value').innerHTML = E3.value;
+  document.querySelector("#E3").addEventListener('input', () => {
+    document.querySelector('#E3_shema_value').innerHTML = document.querySelector("#E3").value;
   })
 
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoa)ded", function () {
     const form = document.querySelector('form');
     // Расчет 
 
-    const R1val = +(R1.value);
+    const R1val = +(document.querySelector("#E1").value);
     const R2val = +(R2.value);
     const R3val = +(R3.value);
     const xR = +(x.value) + R1val
@@ -155,47 +155,5 @@ document.addEventListener("DOMContentLoa)ded", function () {
     document.querySelector('.out3').innerHTML = res3; // Результат 3
 
 
-
   });
-
-  // Отче наш, иже еси на АйБиЭм ПиСи, код наш насущный дай нам!
-  // Помилуй нас от пэйпер джэма и фатал эрора!
-  // Дай нам MD-ков неубываемых и паролей на них.
-  // Искупи нам десницей Своей комплектующих для
-  // Апгрейда ненасытного, ибо душит нас Жаба великая
-  // и страдаем мы от недостатка ресурсов системных.
-
-  // Не допусти выполнения недопустимой операции и
-  // скрой сведения от очей наших.
-  // Не дай нам впасть во искушение новыми релизами,
-  // ибо лукав Нуралиев-искуситель сотоварищи.
-  // Удержи нас грешных от эф-диска и формата. Да
-  // минуют нас бэд-блоки и вирусы.
-  // Умерь гордыню нашу, ибо не зашарим и крохи малой
-  // ближнему своему.
-
-  // Избавь нас от Юзера глупого, ибо продвинут он стал и имя ему БУХ.
-  // Выправи программы наши кривые, ибо клинит башни
-  // нам от конфигураторов и отладчиков Открой нам
-  // знание, ибо истинно говоришь Ты нам, где тру и фолс.
-  // Откомментируй код наш многомегабайтный, ибо
-  // погрязли мы в MD-шниках своих
-
-  // Укроти ламеров, имя Твое всуе поминающих, ибо не ведают, что творят.
-  // Упаси нас от Галактик и Бэстов. Да приидет царствие одинэса.
-  // Не заставь нас нырять в мануалы бездонные и хэлпы
-  // путанные, ибо ересь в них, а дай нам уразуметь
-  // ридмя крошечные, ибо в них слово Господне.
-  // Инкапсулируй объекты наши, ибо полиморфны они и
-  // наследуют Царствие Твое.
-
-  // Выведи нас из цикла бесконечного, ибо на переход
-  // Твой безусловный уповаем.
-  // Укажи нам путь верный, ибо блуждаем мы средь
-  // интерфейсов и парадигм и несть им числа.
-  // Не пронеси мимо чашу сию неупиваемую, ибо пива
-  // жаждем мы и коннекта алкаем.
-  // Молим Тебя и ниц перед Тобой падаем со серверами нашими.
-  // Отныне и присно, энд лайфтайм, бэкап!
-
 });
