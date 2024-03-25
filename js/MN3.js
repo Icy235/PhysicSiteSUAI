@@ -68,6 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('Rek1, Rek2, Rek3', Rek1, Rek2, Rek3)
 
     // I
+    // let I1_l = +(E1_val/(Rek1 + r1)).toFixed(2)
+    // let I22_ll = +(E2_val/(Rek2 + r2)).toFixed(2)
+    // let I33_lll = +(E3_val/(Rek3 + r3)).toFixed(2)
 
     let I11 = +(E1_val/(Rek1 + r1)).toFixed(2)
     let I22 = +(E2_val/(Rek2 + r2)).toFixed(2)
@@ -76,22 +79,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // U_ab
 
-    // // 1 ветка
-    // let Uab1 = (+(I11) * +(Rpar1)).toFixed(2)
-    // // 2 ветка
-    // let Uab2 = (+(I22) * +(Rpar2)).toFixed(2)
-    // // 3 ветка
-    // let Uab3 = (+(I33) * +(Rpar3)).toFixed(2)
+    let U1 = (+(I11) * +(Rpar1)).toFixed(2)
+    let U2 = (+(I22) * +(Rpar2)).toFixed(2)
+    let U3 = (+(I33) * +(Rpar3)).toFixed(2)
 
-    // // I
-    // let I21 = (+(Uab1) / +(yR)).toFixed(2)
-    // let I31 = (+(Uab1) / +(zR)).toFixed(2)
+    // I
+    let I12 = +(U1/R2).toFixed(2)
+    let I13 = +(U1/R3).toFixed(2)
 
-    // let I12 = (+(Uab2) / +(xR)).toFixed(2)
-    // let I32 = (+(Uab2) / +(zR)).toFixed(2)
+    let I21 = +(U2/R1).toFixed(2)
+    let I23 = +(U2/R3).toFixed(2)
 
-    // let I13 = (+(Uab3) / +(xR)).toFixed(2)
-    // let I23 = (+(Uab3) / +(yR)).toFixed(2)
+    let I32 = +(U3/R2).toFixed(2)
+    let I31 = +(U3/R1).toFixed(2)
+    console.log('I12, I13', I12, I13)
+    console.log('I21, I23', I21, I23)
+    console.log('I32, I31', I32, I31)
+
+    // console.log((I11, I21, I31))
+    // console.log((I12, I22, I32))
+    // console.log((I13, I23, I33))
+
 
     // //Проверка
     // let res1 = (+(I11) + +(I21) + +(I31)).toFixed(2)
@@ -116,8 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log("Результат 1: ", res1);
     // console.log("Результат 2 ", res2);
     // console.log("Проверка 3", res3);
-
-
 
     console.log("---------------------------------------------------;")
 
