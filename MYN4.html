@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/MynMn4.css">
-    <script src="js/MYN4.js"></script>
+    <script src="js/MN4.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <!--------Формулы MathJAX------>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -30,18 +30,18 @@
             </div>
             <nav>
                 <ul>
-                    <li class="nav current">Расчет МУН
+                    <li>Расчет МУН
                         <ul>
                             <li><a href="MYN2.html">2 ветки</a></li>
                             <li><a href="MYN3.html">3 ветки</a></li>
-                            <li><a href="MYN4.html" class="current">4 ветки</a></li>
+                            <li><a href="MYN4.html">4 ветки</a></li>
                         </ul>
                     </li>
-                    <li>Расчет МН
+                    <li class="nav current">Расчет МН
                         <ul>
                             <li><a href="MN2.html">2 ветки</a></li>
                             <li><a href="MN3.html">3 ветки</a></li>
-                            <li><a href="MN4.html">4 ветки</a></li>
+                            <li><a href="MN4.html" class="current">4 ветки</a></li>
                         </ul>
                     </li>
             </nav>
@@ -114,52 +114,56 @@
             <div class="input-container input-containerO">
                 <label class="checkbox-green"><span>Источник 1:</span>
                     <input type="checkbox" value='1' checked onchange="this.value = this.checked ? '1' : '-1';
-                if (this.checked) {
-                    document.querySelector('#arrow1').style.transform = 'scale(1)'; 
-                    console.log('1 checked')
-                } else {
-                    document.querySelector('#arrow1').style.transform = 'scale(-1)'; 
-                    console.log('1 checked')
-                }
-            " id="counter1">
+                    if (this.checked) {
+                        document.querySelector('#arrow1').style.transform = 'scale(1)'; 
+                        console.log('1 checked')
+                    } else {
+                        document.querySelector('#arrow1').style.transform = 'scale(-1)'; 
+                        console.log('1 checked')
+                    }
+                " id="counter1">
                     <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
                 </label>
 
                 <label class="checkbox-green"><span>Источник 2:</span>
                     <input type="checkbox" value='1' checked onchange="this.value = this.checked ? '1' : '-1';
-                if (this.checked) {
-                    document.querySelector('#arrow2').style.transform = 'scale(1)'; 
-                    console.log('2 checked')
-                } else {
-                    document.querySelector('#arrow2').style.transform = 'scale(-1)'; 
-                    console.log('2 checked')
-                }
-                " , id="counter2">
+                    if (this.checked) {
+                        document.querySelector('#arrow2').style.transform = 'scale(1)'; 
+                        console.log('2 checked')
+                    } else {
+                        document.querySelector('#arrow2').style.transform = 'scale(-1)'; 
+                        console.log('2 checked')
+                    }
+                    " , id="counter2">
                     <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
                 </label>
 
                 <label class="checkbox-green"><span>Источник 3:</span>
                     <input type="checkbox" checked value='1' onchange="this.value = this.checked ? '1' : '-1';
-                    if (this.checked) {
-                    document.querySelector('#arrow3').style.transform = 'scale(1)'; 
-                } else {
-                    document.querySelector('#arrow3').style.transform = 'scale(-1)'; 
-                }
-                " , id="counter3">
+                        if (this.checked) {
+                        document.querySelector('#arrow3').style.transform = 'scale(1)'; 
+                    } else {
+                        document.querySelector('#arrow3').style.transform = 'scale(-1)'; 
+                    }
+                    " , id="counter3">
                     <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
                 </label>
 
                 <label class="checkbox-green"><span>Источник 4:</span>
                     <input type="checkbox" checked value='1' onchange="this.value = this.checked ? '1' : '-1';
-                    if (this.checked) {
-                    document.querySelector('#arrow4').style.transform = 'scale(1)'; 
-                } else {
-                    document.querySelector('#arrow4').style.transform = 'scale(-1)'; 
-                }
-                " , id="counter4">
+                        if (this.checked) {
+                        document.querySelector('#arrow4').style.transform = 'scale(1)'; 
+                    } else {
+                        document.querySelector('#arrow4').style.transform = 'scale(-1)'; 
+                    }
+                    " , id="counter4">
                     <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
                 </label>
             </div>
+
+
+
+
 
             <div class="buttondiv">
                 <button type="submit" class="button">Расчет</button>
@@ -182,57 +186,16 @@
         </div>
         <h7>
             <!--------Формулы MathJAX------>
-
-            <!--------Первый источник------>
-            <span class="formulas-h">1.</span>
-            <div class="formula">\(R_{||}= {R_2 * R_3 \over R_2 + R_3 }=\) <span class="out11"> </span></div>
-            <div class="formula">\(R_э = R_{||} + R_1=\) <span class="out21"> </span></div>
-            <!--------out1(1) - Первый источник------>
-            <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\) <span class="out31"> </span></div>
-            <!--------В js не дает скобки поставить------>
-            <div class="formula">\(U_{ab} = I_1 * R_{||}=\) <span class="out41"> </span></div>
-            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) <span class="out51"> </span></div>
-            <div class="formula">\(I_3 = {U_{ab} \over R_3}=\) <span class="out61"> </span></div>
-
-            <!--------Второй источник------>
-            <span class="formulas-h">2.</span>
-            <div class="formula">\(R_{||}= {R_1 * R_3 \over R_1 + R_3 }=\) <span class="out12"> </span></div>
-            <div class="formula">\(R_э = R_{||} + R_3=\) <span class="out22"> </span></div>
-            <div class="formula">\(I_2 = {E_1 \over R_э + r_{02}}=\) <span class="out32"> </span></div>
-            <!--------out1 (2) - Второй источник------>
-            <div class="formula">\(U_{ab} = I_2 * R_{||}=\) <span class="out42"> </span></div>
-            <div class="formula">\(I_1 = {U_{ab} \over R_1}=\) <span class="out52"> </span></div>
-            <div class="formula">\(I_3 = {U_{ab} \over R_3}=\) <span class="out62"> </span></div>
-
-            <!--------Третий источник------>
-            <span class="formulas-h">3.</span>
-            <div class="formula">\(R_{||}= {R_1 * R_2 \over R_1 + R_2 }=\) <span class="out13"> </span></div>
-            <div class="formula">\(R_э = R_{||} + R_3=\) <span class="out23"> </span></div>
-            <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\) <span class="out33"> </span></div>
-            <!--------out1 (3) - Третий источник------>
-            <div class="formula">\(U_{ab} = I_3 * R_{||}=\) <span class="out43"> </span></div>
-            <div class="formula">\(I_1 = {U_{ab} \over R_1}=\) <span class="out53"> </span></div>
-            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) <span class="out63"> </span></div>
-            <div class="formula">\(I_4 = {U_{ab} \over R_4}=\) <span class="out73"> </span></div>
-            <!---В работе-->
-            <!--------Четвертый источник------>
-            <span class="formulas-h">4.</span>
-            <div class="formula">\(R_{||}= {R_1 * R_2 \over R_1 + R_2 }=\) <span class="out14"> </span></div>
-            <!--------out1 (4) - Четвертый источник------>
-            <div class="formula">\(R_э = R_{||} + R_3=\) <span class="out24"> </span></div>
-            <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\) <span class="out34"> </span></div>
-            <div class="formula">\(U_{ab} = I_3 * R_{||}=\) <span class="out44"> </span></div>
-            <div class="formula">\(I_1 = {U_{ab} \over R_1}=\) <span class="out54"> </span></div>
-            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) <span class="out64"> </span></div>
-            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) <span class="out74"> </span></div>
-
-            <!--------Результат------>
-            <span class="formulas-h">РЕЗУЛЬТАТ</span>
-            <div class="formula">\(I_1 = \) <span class="out1"> </span></div>
-            <div class="formula">\(I_2 = \) <span class="out2"> </span></div>
-            <div class="formula">\(I_3 = \) <span class="out3"> </span></div>
-            <div class="formula">\(I_4 = \) <span class="out4"> </span></div>
-
+            <div class="formula"> \( g_1 = {1\over {(R_1 + r_{01} +R_2)}}=\) <span class="out1"> </span></div>
+            <div class="formula">\( g_2 = {1\over {(R_3 + r_{02} +R_4)}}=\) <span class="out2"></span></div>
+            <div class="formula">\( g_3 = {1\over {(R_5 + r_{03} +R_6)}}=\) <span class="out3"> </span></div>
+            <div class="formula">\( g_4 = {1\over {(R_7 + r_{04} +R_8)}}=\) <span class="out4"> </span></div>
+            <div class="formula">\(U_{ab} = {{\pm E_1 * g_1 \pm E_2 * g_2 \pm E_3 * g3 \pm E_4 * g4} \over {g_1 + g_2 +
+                g_3 + g_4}} = \) <span class="out5"></span></div>
+            <div class="formula">\(I_1 = {(E_1 - U_{ab}) + g_1} =\) <span class="out6"> </span></div>
+            <div class="formula">\( I_2 = {(E_2 - U_{ab}) + g_2} =\) <span class="out7"> </span></div>
+            <div class="formula">\(I_3 = {(E_3 - U_{ab}) + g_3} =\) <span class="out8"> </span></div>
+            <div class="formula">\(I_4 = {(E_4 - U_{ab}) + g_4} =\) <span class="out9"> </span></div>
         </h7>
 
         </form>
