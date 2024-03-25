@@ -159,45 +159,108 @@
         </div>
         <h7>
             <!--------Формулы MathJAX------>
-        
+
             <!--------Первый источник------>
             <span class="formulas-h">1.</span>
-            <div class="formula">\(R_{||}= {R_2 * R_3 \over R_2 + R_3 }=\) <span class="out11"> </span></div>
-            <div class="formula">\(R_э = R_{||} + R_1=\) <span class="out21"> </span></div>
+            <div class="formula">\(R_{||}= {R_2 * R_3 \over R_2 + R_3 }=\) 
+                <table class="formulas_table">
+                    <tr>
+                        <td><span class="R2_formula"></span> * <span class="R3_formula"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span class="R2_formula"></span> + <span class="R3_formula"></span></td>
+                    </tr>
+                </table><span class="equals">\( = \)</span> <span class="Rpar1"> </span></div>
+            <div class="formula">\(R_э = R_{||} + R_1=\) 
+                <span class="Rpar1"></span> + <span class="R1_formula"></span>
+            <span class="equals">\( = \)</span> <span class="Rek1"></span>    
+            </div>
             <!--------out1(1) - Первый источник------>
-            <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\) <span class="out31"> </span></div>
+            <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\) 
+                <table class="formulas_table">
+                    <tr>
+                        <td><span class="E1_formula"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span class="Rek1_formula"></span> + <span class="r1_formula"></span></td>
+                    </tr>
+                </table><span class="equals">\( = \)</span> <span class="I1_formula"> </span>
+            </div>
             <!--------В js не дает скобки поставить------>
-            <div class="formula">\(U_{ab} = I_1 * R_{||}=\) <span class="out41"> </span></div>
-            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) <span class="out51"> </span></div>
-            <div class="formula">\(I_3 = {U_{ab} \over R_3}=\) <span class="out61"> </span></div>
-        
+            <div class="formula">\(U_{ab} = I_1 * R_{||}=\) 
+                <span class="I1_formula"></span> * <span class="Rpar1_formula"></span>
+            <span class="equals">\( = \)</span> <span class="U_l_formula"></span>
+            </div>
+            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) 
+            <table class="formulas_table">
+                <tr>
+                    <td><span class="U_l_formula"></span></td>
+                </tr>
+                <tr>
+                    <td class="denominator"><span class="R2_formula"></span></td>
+                </tr>
+            </table><span class="equals">\( = \)</span> <span class="I2_l_formula"> </span></div>
+            <div class="formula">\(I_3 = {U_{ab} \over R_3}=\) 
+                <table class="formulas_table">
+                    <tr>
+                        <td><span class="U_l_formula"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span class="R3_formula"></span></td>
+                    </tr>
+                </table><span class="equals">\( = \)</span> <span class="I3_l_formula"> </span></div>
+
             <!--------Второй источник------>
             <span class="formulas-h">2.</span>
-            <div class="formula">\(R_{||}= {R_1 * R_3 \over R_1 + R_3 }=\) <span class="out12"> </span></div>
-            <div class="formula">\(R_э = R_{||} + R_3=\) <span class="out22"> </span></div>
+            <div class="formula">\(R_{||}= {R_1 * R_3 \over R_1 + R_3 }=\) 
+                <table class="formulas_table">
+                    <tr>
+                        <td><span class="R1_formula"></span> * <span class="R3_formula"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span class="R1_formula"></span> + <span class="R3_formula"></span></td>
+                    </tr>
+                </table><span class="equals">\( = \)</span> <span class="Rpar2"> </span>
+            </div>
+            <div class="formula">\(R_э = R_{||} + R_3=\)
+                <span class="Rpar2"></span> + <span class="R2_formula"></span>
+            <span class="equals">\( = \)</span> <span class="Rek2"></span> 
+            </div>
             <div class="formula">\(I_2 = {E_1 \over R_э + r_{02}}=\) <span class="out32"> </span></div>
             <!--------out1 (2) - Второй источник------>
             <div class="formula">\(U_{ab} = I_2 * R_{||}=\) <span class="out42"> </span></div>
             <div class="formula">\(I_1 = {U_{ab} \over R_1}=\) <span class="out52"> </span></div>
             <div class="formula">\(I_3 = {U_{ab} \over R_3}=\) <span class="out62"> </span></div>
-        
+
             <!--------Третий источник------>
             <span class="formulas-h">3.</span>
-            <div class="formula">\(R_{||}= {R_1 * R_2 \over R_1 + R_2 }=\) <span class="out13"> </span></div>
-            <div class="formula">\(R_э = R_{||} + R_3=\) <span class="out23"> </span></div>
+            <div class="formula">\(R_{||}= {R_1 * R_2 \over R_1 + R_2 }=\) 
+                <table class="formulas_table">
+                    <tr>
+                        <td><span class="R2_formula"></span> * <span class="R1_formula"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="denominator"><span class="R2_formula"></span> + <span class="R1_formula"></span></td>
+                    </tr>
+                </table><span class="equals">\( = \)</span> <span class="Rpar3"> </span>
+            </div>
+            <div class="formula">\(R_э = R_{||} + R_3=\) 
+                <span class="Rpar3"></span> + <span class="R3_formula"></span>
+            <span class="equals">\( = \)</span> <span class="Rek3"></span> 
+            </div>
             <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\) <span class="out33"> </span></div>
             <!--------out1 (3) - Третий источник------>
             <div class="formula">\(U_{ab} = I_3 * R_{||}=\) <span class="out43"> </span></div>
             <div class="formula">\(I_1 = {U_{ab} \over R_1}=\) <span class="out53"> </span></div>
             <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) <span class="out63"> </span></div>
-        
+
             <!--------Результат------>
             <span class="formulas-h">РЕЗУЛЬТАТ</span>
-            <div class="formula">\(I_1 = \) <span class="out1"> </span></div>
-            <div class="formula">\(I_2 = \) <span class="out2"> </span></div>
-            <div class="formula">\(I_3 = \) <span class="out3"> </span></div>
+            <div class="formula">\(I_1 = I_1^| \pm I_1^{||} \pm I_1^{|||}=\) <span class="out1"> </span></div>
+            <div class="formula">\(I_2 = I_2^| \pm I_2^{||} \pm I_2^{|||}=\) <span class="out2"> </span></div>
+            <div class="formula">\(I_3 = I_3^| \pm I_3^{||} \pm I_3^{|||}=\) <span class="out3"> </span></div>
         </h7>
-        
+
         </form>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>

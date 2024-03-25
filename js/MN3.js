@@ -68,66 +68,80 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('Rek1, Rek2, Rek3', Rek1, Rek2, Rek3)
 
     // I
-    // let I1_l = +(E1_val/(Rek1 + r1)).toFixed(2)
-    // let I22_ll = +(E2_val/(Rek2 + r2)).toFixed(2)
-    // let I33_lll = +(E3_val/(Rek3 + r3)).toFixed(2)
+    let I1_l = +(E1_val/(Rek1 + r1)).toFixed(2) // _l значит количество штрихов
+    let I2_ll = +(E2_val/(Rek2 + r2)).toFixed(2)
+    let I3_lll = +(E3_val/(Rek3 + r3)).toFixed(2)
 
-    let I11 = +(E1_val/(Rek1 + r1)).toFixed(2)
-    let I22 = +(E2_val/(Rek2 + r2)).toFixed(2)
-    let I33 = +(E3_val/(Rek3 + r3)).toFixed(2)
-    console.log('I11, I22, I33', I11, I22, I33)
+    console.log('I1_l, I2_ll, I3_lll', I1_l, I2_ll, I3_lll)
 
     // U_ab
 
-    let U1 = (+(I11) * +(Rpar1)).toFixed(2)
-    let U2 = (+(I22) * +(Rpar2)).toFixed(2)
-    let U3 = (+(I33) * +(Rpar3)).toFixed(2)
+    let U_l = Math.abs((+(I1_l) * +(Rpar1)).toFixed(2))
+    let U_ll = Math.abs((+(I2_ll) * +(Rpar2)).toFixed(2))
+    let U_lll = Math.abs((+(I3_lll) * +(Rpar3)).toFixed(2))
 
     // I
-    let I12 = +(U1/R2).toFixed(2)
-    let I13 = +(U1/R3).toFixed(2)
+    let I2_l = +(U_l/R2).toFixed(2)
+    let I3_l = +(U_l/R3).toFixed(2)
 
-    let I21 = +(U2/R1).toFixed(2)
-    let I23 = +(U2/R3).toFixed(2)
+    let I1_ll = +(U_ll/R1).toFixed(2)
+    let I3_ll = +(U_ll/R3).toFixed(2)
 
-    let I32 = +(U3/R2).toFixed(2)
-    let I31 = +(U3/R1).toFixed(2)
-    console.log('I12, I13', I12, I13)
-    console.log('I21, I23', I21, I23)
-    console.log('I32, I31', I32, I31)
-
-    // console.log((I11, I21, I31))
-    // console.log((I12, I22, I32))
-    // console.log((I13, I23, I33))
+    let I2_lll = +(U_lll/R2).toFixed(2)
+    let I1_lll = +(U_lll/R1).toFixed(2)
+    console.log()
 
 
-    // //Проверка
-    // let res1 = (+(I11) + +(I21) + +(I31)).toFixed(2)
-    // let res2 = (+(I12) + +(I22) + +(I32)).toFixed(2)
-    // let res3 = (+(I13) + +(I23) + +(I33)).toFixed(2)
+    $('.equals').css('display', 'inline-block')
+    $('.formulas_table').css('display', 'inline-block')
+
+    
+    const myInnerHTML = function(id, isvariable=false, variable=NaN) {
+      if (isvariable === false) {
+        $('.'+id+'_formula').html($('#'+id).val())
+      } else {
+        console.log('_')
+        $('.'+id+'_formula').html(variable)
+        $('.'+id).html(variable)
+      }
+    }
+    ids = ['R1', 'R2', 'R3', 'r1', 'r2', 'r3']
+    for (i in ids) {
+      console.log('i =', ids[i])
+      myInnerHTML(ids[i])
+    }
+    myInnerHTML('Rpar1', true, Rpar1)
+    myInnerHTML('Rpar2', true, Rpar2)
+    myInnerHTML('Rpar3', true, Rpar3)
+
+    myInnerHTML('Rek1', true, Rek1)
+    myInnerHTML('Rek2', true, Rek2)
+    myInnerHTML('Rek3', true, Rek3)
+
+    myInnerHTML('E1', true, E1_val)
+    myInnerHTML('E2', true, E2_val)
+    myInnerHTML('E3', true, E3_val)
+
+    myInnerHTML('I1', true, I1_l)
+    myInnerHTML('I2', true, I2_l)
+    myInnerHTML('I3', true, I3_l)
+
+    myInnerHTML('U_l', true, U_l)
+    myInnerHTML('U_ll', true, U_ll)
+    myInnerHTML('U_lll', true, U_lll)
+
+    myInnerHTML('I2_l', true, I2_l)
+    myInnerHTML('I3_l', true, I3_l)
 
 
 
-    // // Вывод результата в консоль
-    // console.log("Первая ветка: ", xR);
-    // console.log("Вторая ветка: ", yR);
-    // console.log("Третья ветка: ", zR);
-    // console.log("E1: ", E1val);
-    // console.log("E2: ", E2val);
-    // console.log("E3: ", E3val);
-    // console.log("R1: ", R1val);
-    // console.log("R2: ", R2val);
-    // console.log("R3: ", R3val);
-    // console.log("Cтрелка 1 источника: ", o1);
-    // console.log("Cтрелка 2 источника: ", o2);
-    // console.log("Cтрелка 3 источника: ", o3);
-    // console.log("Результат 1: ", res1);
-    // console.log("Результат 2 ", res2);
-    // console.log("Проверка 3", res3);
+    str1 = I1_l + ' ± ' + I1_ll + ' ± ' + I1_lll
+    str2 = I2_l + ' ± ' + I2_ll + ' ± ' + I2_lll
+    str3 = I3_l + ' ± ' + I3_ll + ' ± ' + I3_lll
 
-    console.log("---------------------------------------------------;")
-
-
+    $('.out1').html(str1)
+    $('.out2').html(str2)
+    $('.out3').html(str3)
 
   });
 });
