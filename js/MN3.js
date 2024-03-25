@@ -1,76 +1,147 @@
 document.addEventListener("DOMContentLoaded", function () {
   // при вводе R значение выводится на схему
   document.querySelector("#R1").addEventListener('input', () => {
-    document.querySelector('#R1_shema_value').innerHTML = document.querySelector("#R1").value;
+    document.querySelector('#R1_shema_val()').innerHTML = document.querySelector("#R1").val();
   })
   document.querySelector("#R2").addEventListener('input', () => {
-    document.querySelector('#R2_shema_value').innerHTML = document.querySelector("#R2").value;
+    document.querySelector('#R2_shema_val()').innerHTML = document.querySelector("#R2").val();
   })
   document.querySelector("#R3").addEventListener('input', () => {
-    document.querySelector('#R3_shema_value').innerHTML = document.querySelector("#R3").value;
+    document.querySelector('#R3_shema_val()').innerHTML = document.querySelector("#R3").val();
   })
 
   // при вводе E значение выводится на схему
   document.querySelector("#E1").addEventListener('input', () => {
-    document.querySelector('#E1_shema_value').innerHTML = document.querySelector("#E1").value;
+    document.querySelector('#E1_shema_val()').innerHTML = document.querySelector("#E1").val();
   })
   document.querySelector("#E2").addEventListener('input', () => {
-    document.querySelector('#E2_shema_value').innerHTML = document.querySelector("#E2").value;
+    document.querySelector('#E2_shema_val()').innerHTML = document.querySelector("#E2").val();
   })
   document.querySelector("#E3").addEventListener('input', () => {
-    document.querySelector('#E3_shema_value').innerHTML = document.querySelector("#E3").value;
+    document.querySelector('#E3_shema_val()').innerHTML = document.querySelector("#E3").val();
   })
 
 
   document.querySelector('form').addEventListener("submit", (event) => {
     event.preventDefault();
-    const form = document.querySelector('form');
-    // проводимости ветвей
-    const g1 = +(1/(R1.value+r1.value)).toFixed(3)
-    const g2 = +(1/(R2.value+r2.value)).toFixed(3)
-    const g3 = +(1/(R3.value+r3.value)).toFixed(3)
-    console.log('g1, g2, g3 = ', g1, g2, g3)
-    console.log('counter1,2,3 = ', counter1.value, counter2.value, counter3.value)
 
-    //U 
-    const E1_val = E1.value*counter1.value //потом надо все в формулы выводить и над стилизацией поработать
-    const E2_val = E2.value*counter2.value
-    const E3_val = E3.value*counter3.value
-    const U = ((E1_val*g1 + E2_val*g2 + E3_val*g3)/(g1+g2+g3)).toFixed(2)
+    // const R1val = +(document.querySelector("#E1").value);
+    // const R2val = +(R2.value);
+    // const R3val = +(R3.value);
+    // const xR = +(x.value) + R1val
+    // const yR = +(y.value) + R2val
+    // const zR = +(z.value) + R3val
+    // const E1val = +(E1.value);
+    // const E2val = +(E2.value);
+    // const E3val = +(E3.value);
+    // const o1 = Number(counter1.value);
+    // const o2 = Number(counter2.value);
+    // const o3 = Number(counter3.value);
+    // const E1o1 = o1 * E1val
+    // const E2o2 = o2 * E2val
+    // const E3o3 = o3 * E3val
 
-    console.log('U after = ', U)
+    const E1_val = $("#E1").val()*$("#counter1").val()
+    const E2_val = $("#E2").val()*$("#counter2").val()
+    const E3_val = $("#E3").val()*$("#counter3").val()
 
-    //ток для каждой ветви
-    const I1 = ((E1_val-U)*g1).toFixed(2)
-    const I2 = ((E2_val-U)*g2).toFixed(2)
-    const I3 = ((E3_val-U)*g3).toFixed(2)
-    console.log('I1, I2, I3 =', I1, I2, I3)
+    R1 = +$("#R1").val()
+    R2 = +$("#R2").val()
+    R3 = +$("#R3").val()
+    r1 = +$("#r1").val()
+    r2 = +$("#r2").val()
+    r3 = +$("#r3").val()
+
+    // Паралелим
+
+    console.log('R1, R3, R1+R3', R1, R3, R1+R3)
+    let Rpar1 = +(R2*R3/(R2+R3)).toFixed(2);
+    let Rpar2 = +(R1*R3/(R1+R3)).toFixed(2);
+    let Rpar3 = +(R2*R1/(R2+R1)).toFixed(2);
+    console.log('Rpar1, Rpar2, Rpar3', Rpar1, Rpar2, Rpar3)
+
+    // R эквивалентное = Rпар + R главной ветви (без r)
+
+    let Rek1 = +(Rpar1+R1).toFixed(2)
+    let Rek2 = +(Rpar2+R2).toFixed(2)
+    let Rek3 = +(Rpar3+R3).toFixed(2)
+    console.log('Rek1, Rek2, Rek3', Rek1, Rek2, Rek3)
+
+    // I
+    let I1_l = +(E1_val/(Rek1 + r1)).toFixed(2) // _l значит количество штрихов
+    let I2_ll = +(E2_val/(Rek2 + r2)).toFixed(2)
+    let I3_lll = +(E3_val/(Rek3 + r3)).toFixed(2)
+
+    console.log('I1_l, I2_ll, I3_lll', I1_l, I2_ll, I3_lll)
+
+    // U_ab
+
+    let U_l = Math.abs((+(I1_l) * +(Rpar1)).toFixed(2))
+    let U_ll = Math.abs((+(I2_ll) * +(Rpar2)).toFixed(2))
+    let U_lll = Math.abs((+(I3_lll) * +(Rpar3)).toFixed(2))
+
+    // I
+    let I2_l = +(U_l/R2).toFixed(2)
+    let I3_l = +(U_l/R3).toFixed(2)
+
+    let I1_ll = +(U_ll/R1).toFixed(2)
+    let I3_ll = +(U_ll/R3).toFixed(2)
+
+    let I2_lll = +(U_lll/R2).toFixed(2)
+    let I1_lll = +(U_lll/R1).toFixed(2)
+    console.log()
+
+
+    $('.equals').css('display', 'inline-block')
+    $('.formulas_table').css('display', 'inline-block')
+
     
-    // // Вывод результата и промежуточных вычислений в текст
-    // document.querySelectorAll('.formulas_table').style.display = 'inline-block'
-    const formulas = console.log(document.querySelectorAll('.formulas_table'))
-    formulas.forEach(item => {
-      item.style.display = 'inline-block'
-    });
-    document.querySelector('.equals').style.display = 'inline-block'
+    const myInnerHTML = function(id, isvariable=false, variable=NaN) {
+      if (isvariable === false) {
+        $('.'+id+'_formula').html($('#'+id).val())
+      } else {
+        console.log('_')
+        $('.'+id+'_formula').html(variable)
+        $('.'+id).html(variable)
+      }
+    }
+    ids = ['R1', 'R2', 'R3', 'r1', 'r2', 'r3']
+    for (i in ids) {
+      console.log('i =', ids[i])
+      myInnerHTML(ids[i])
+    }
+    myInnerHTML('Rpar1', true, Rpar1)
+    myInnerHTML('Rpar2', true, Rpar2)
+    myInnerHTML('Rpar3', true, Rpar3)
 
-    document.querySelector('#R1_formula').innerHTML = R1.value;
-    document.querySelector('#r1_formula').innerHTML = r1.value;
-    document.querySelector('#g1_formula').innerHTML = g1;
-    
-    document.querySelector('#R2_formula').innerHTML = R2.value;
-    document.querySelector('#r2_formula').innerHTML = r2.value;
-    document.querySelector('#g2_formula').innerHTML = g2;
+    myInnerHTML('Rek1', true, Rek1)
+    myInnerHTML('Rek2', true, Rek2)
+    myInnerHTML('Rek3', true, Rek3)
 
-    document.querySelector('#R3_formula').innerHTML = R3.value;
-    document.querySelector('#r3_formula').innerHTML = r3.value;
-    document.querySelector('#g3_formula').innerHTML = g3;
+    myInnerHTML('E1', true, E1_val)
+    myInnerHTML('E2', true, E2_val)
+    myInnerHTML('E3', true, E3_val)
 
-    
-    // document.querySelector('.out4').innerHTML = g3;
-    // document.querySelector('.out5').innerHTML = I1;
-    // document.querySelector('.out6').innerHTML = I2;
-    // document.querySelector('.out7').innerHTML = I3;
+    myInnerHTML('I1', true, I1_l)
+    myInnerHTML('I2', true, I2_l)
+    myInnerHTML('I3', true, I3_l)
+
+    myInnerHTML('U_l', true, U_l)
+    myInnerHTML('U_ll', true, U_ll)
+    myInnerHTML('U_lll', true, U_lll)
+
+    myInnerHTML('I2_l', true, I2_l)
+    myInnerHTML('I3_l', true, I3_l)
+
+
+
+    str1 = I1_l + ' ± ' + I1_ll + ' ± ' + I1_lll
+    str2 = I2_l + ' ± ' + I2_ll + ' ± ' + I2_lll
+    str3 = I3_l + ' ± ' + I3_ll + ' ± ' + I3_lll
+
+    $('.out1').html(str1)
+    $('.out2').html(str2)
+    $('.out3').html(str3)
 
   });
 });
