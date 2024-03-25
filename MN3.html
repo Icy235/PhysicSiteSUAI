@@ -7,13 +7,7 @@
     <title>Физика</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/MynMn3.css">
-    <script src="js/MN3.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <!--------Формулы MathJAX------>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
-    <!--------Формулы MathJAX------>
+    <link rel="stylesheet" href="css/MynMn3.css">    
 </head>
 
 <body>
@@ -164,16 +158,16 @@
             <span class="E_shema" id="E3_shema">E3 = <span id="E3_shema_value">36</span> В</span>
         </div>
         <h7>
-            <!--------Формулы MathJAX------>
+            
             <div class="formula"> \( g_1 = {1\over {(R_1 + r_{01})}}=\) 
                 <table class="formulas_table">
                     <tr>
                         <td>1</td>
                     </tr>
                     <tr>
-                        <td class="denominator"><span id="R1_formula"></span> + <span id="r1_formula"></span></td>
+                        <td class="denominator"><span class="R1_formula"></span> + <span class="r1_formula"></span></td>
                     </tr>
-                </table> <span class="equals">\( = \)</span> <span id="g1_formula"></span>
+                </table> <span class="equals">\( = \)</span> <span class="g1_formula"></span>
 </div>
             <div class="formula">\( g_2 = {1\over {(R_2 + r_{02})}}=\) 
                 <table class="formulas_table">
@@ -181,9 +175,9 @@
                         <td>1</td>
                     </tr>
                     <tr>
-                        <td class="denominator"><span id="R2_formula"></span> + <span id="r2_formula"></span></td>
+                        <td class="denominator"><span class="R2_formula"></span> + <span class="r2_formula"></span></td>
                     </tr>
-                </table> <span class="equals">\( = \)</span> <span id="g2_formula"></span>
+                </table> <span class="equals">\( = \)</span> <span class="g2_formula"></span>
             </div>
             <div class="formula">\( g_3 = {1\over {(R_3 + r_{03})}}=\)  
                 <table class="formulas_table">
@@ -191,19 +185,19 @@
                         <td>1</td>
                     </tr>
                     <tr>
-                        <td class="denominator"><span id="R3_formula"></span> + <span id="r3_formula"></span></td>
+                        <td class="denominator"><span class="R3_formula"></span> + <span class="r3_formula"></span></td>
                     </tr>
-                </table> <span class="equals">\( = \)</span> <span id="g3_formula"></span>
+                </table> <span class="equals">\( = \)</span> <span class="g3_formula"></span>
             </div>
             <div class="formula">\(U_{ab} = {{\pm E_1 * g_1 \pm E_2 * g_2 \pm E_3 * g3} \over {g_1 + g_2 + g_3}} = \)
                 <table class="formulas_table">
                     <tr>
-                        <td><span id="E1_formula"></span>*<span id="g1_formula"></span> + <span id="E2_formula"></span>*<span id="g2_formula"></span> + <span id="E3_formula"></span>*<span id="g3_formula"></span></td>
+                        <td><span class="E1_formula"></span>*<span class="g1_formula"></span> + <span class="E2_formula"></span>*<span class="g2_formula"></span> + <span class="E3_formula"></span>*<span class="g3_formula"></span></td>
                     </tr>
                     <tr>
-                        <td class="denominator"><span id="g1_formula"></span> + <span id="g2_formula"></span> + <span id="g3_formula"></span></td>
+                        <td class="denominator"><span class="g1_formula"></span> + <span class="g2_formula"></span> + <span class="g3_formula"></span></td>
                     </tr>
-                </table> <span class="equals">\( = \)</span> <span id="U_formula"></span>
+                </table> <span class="equals">\( = \)</span> <span class="U_formula"></span>
             </div>
             <div class="formula">\(I_1 = {(E_1 - U_{ab}) + g_1} =\) </div>
             <div class="formula">\( I_2 = {(E_2 - U_{ab}) + g_2} =\) </div>
@@ -211,6 +205,12 @@
         </h7>
 
     </div>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="js/MN3.js"></script>
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>  надо удалить отовсюду, это неактивная ссылка -->
 </body>
 
 </html>
