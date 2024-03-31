@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/MynMn2.css">
-    <script src="js/MN2.js"></script>
+    <script src="js/MN2.js"></script> 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <!--------Формулы MathJAX------>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -30,16 +30,16 @@
             </div>
             <nav>
                 <ul>
-                    <li class="nav current">Расчет МУН
+                    <li>Расчет МУН
                         <ul>
-                            <li><a href="MYN2.html" class="current">2 ветки</a></li>
+                            <li><a href="MYN2.html">2 ветки</a></li>
                             <li><a href="MYN3.html">3 ветки</a></li>
                             <li><a href="MYN4.html">4 ветки</a></li>
                         </ul>
                     </li>
-                    <li>Расчет МН
+                    <li class="nav current">Расчет МН
                         <ul>
-                            <li><a href="MN2.html">2 ветки</a></li>
+                            <li><a href="MN2.html" class="current">2 ветки</a></li>
                             <li><a href="MN3.html">3 ветки</a></li>
                             <li><a href="MN4.html">4 ветки</a></li>
                         </ul>
@@ -49,43 +49,42 @@
         </div>
     </header>
     <div id="work">
+    <div>
         <form action="Result.html" method="post">
 
+            <!-- Инпут резисторов -->
             <div class="input-container-wrapper">
-                <!-- Инпут резисторов -->
-                <div class="input-container input-containerU">
-                    <label for="input1">Первая ветка:
-                        <input type="number" step="any" id="x" name="input1" value="11.2">
-                        
-                    </label>
+            <div class="input-container input-containerU">
+                <label for="input1">Первая ветка:
+                    <input type="number" step="any" id="x" name="input1" value="11.2"> 
+                </label>
 
-                    <label for="input2">Вторая ветка:
-                        <input type="number" step="any" id="y" name="input2" value="30">
-                    </label>
-                </div>
-
-                <!-- Инпут E источника -->
-                <div class="input-container input-containerE">
-                    <label for="input4">E1:
-                        <input type="number" step="any" id="E1" name="input4" value="12">
-                    </label>
-
-                    <label for="input5">E2:
-                        <input type="number" step="any" id="E2" name="input5" value="127">
-                    </label>
-                </div>
-
-                <!-- Инпут сопротивления источника -->
-                <div class="input-container input-containerR">
-                    <label for="input7">R1 источника:
-                        <input type="number" step="any" id="R1" name="input7" value="1">
-                    </label>
-
-                    <label for="input8">R2 источника:
-                        <input type="number" step="any" id="R2" name="input8" value="1">
-                    </label>
-                </div>
+                <label for="input2">Вторая ветка:
+                    <input type="number" step="any" id="y" name="input2" value="30">
+                </label>
             </div>
+
+            <!-- Инпут E источника -->
+            <div class="input-container input-containerE">
+                <label for="input4">E1:
+                    <input type="number" step="any" id="E1" name="input4" value="12">
+                </label>
+
+                <label for="input5">E2:
+                    <input type="number" step="any" id="E2" name="input5" value="127">
+                </label>
+            </div>
+
+            <!-- Инпут сопротивления источника -->
+            <div class="input-container input-containerR">
+                <label for="input7">R1 источника:
+                    <input type="number" step="any" id="R1" name="input7" value="1">
+                </label>
+
+                <label for="input8">R2 источника:
+                    <input type="number" step="any" id="R2" name="input8" value="1">
+                </label>
+            </div></div>
             <!-- Выбор направления источника-->
             <div class="input-container input-containerO">
                 <label class="checkbox-green"><span>Источник 1:</span>
@@ -114,15 +113,11 @@
                     <span class="checkbox-green-switch" data-label-on="→" data-label-off="←"></span>
                 </label>
             </div>
-
-
-
-
             <div class="buttondiv">
                 <button type="submit" class="button">Расчет</button>
-
             </div>
         </form>
+        </div>
         <div id="shema-wrapper">
             <img id="shema" src="img/Shema2.jpg">
             <img class="arrow" id="arrow1" src="img/arrow.jpg">
@@ -132,36 +127,15 @@
             <span class="E_shema" id="E1_shema">E1 = <span id="E1_shema_value">12</span> В</span>
             <span class="E_shema" id="E2_shema">E2 = <span id="E2_shema_value">127</span> В</span>
         </div>
-
         <h7>
             <!--------Формулы MathJAX------>
-
-            <!--------Первый источник------>
-            <span class="formulas-h">1.</span>
-
-            <div class="formula">\(R_э = R_{||} + R_1=\) <span class="out21"> </span></div>
-            <!--------out1(1) - Первый источник------>
-            <div class="formula">\(I_1 = {E_1 \over R_э + r_{01}}=\) <span class="out31"> </span></div>
-            <!--------В js не дает скобки поставить------>
-            <div class="formula">\(U_{ab} = I_1 * R_{||}=\) <span class="out41"> </span></div>
-            <div class="formula">\(I_2 = {U_{ab} \over R_2}=\) <span class="out51"> </span></div>
-
-
-            <!--------Второй источник------>
-            <span class="formulas-h">2.</span>
-
-            <div class="formula">\(R_э = R_{||} + R_3=\) <span class="out22"> </span></div>
-            <div class="formula">\(I_2 = {E_1 \over R_э + r_{02}}=\) <span class="out32"> </span></div>
-            <!--------out1 (2) - Второй источник------>
-            <div class="formula">\(U_{ab} = I_2 * R_{||}=\) <span class="out42"> </span></div>
-            <div class="formula">\(I_1 = {U_{ab} \over R_1}=\) <span class="out52"> </span></div>
-
-
-            <!--------Результат------>
-            <span class="formulas-h">РЕЗУЛЬТАТ</span>
-            <div class="formula">\(I_1 = \) <span class="out1"> </span></div>
-            <div class="formula">\(I_2 = \) <span class="out2"> </span></div>
-
+            
+            <div class="formula"> \( g_1 = {1\over {(R_1 + r_{01} +R_2)}}=\)                                   <span class="out1"> </span></div>
+            <div class="formula">\( g_2 = {1\over {(R_3 + r_{02} +R_4)}}=\)                                    <span class="out2"></span></div>
+            <div class="formula">\(U_{ab} = {{\pm E_1 * g_1 \pm E_2 * g_2 } \over {g_1 + g_2 }} = \)           <span class="out3"></span></div>
+            <div class="formula">\(I_1 = {(E_1 - U_{ab}) + g_1} =\)                                            <span class="out4"> </span></div>
+            <div class="formula">\( I_2 = {(E_2 - U_{ab}) + g_2} =\)                                           <span class="out5"> </span></div>
+      
         </h7>
 
         </form>

@@ -256,25 +256,3 @@ input {
 .input-container-wrapper {
 	display: inline-block;
 }
-
-.formulas_table {
-	display: none;
-	border: none;
-	border-spacing: 0;
-	text-align: center;
-	margin-bottom: -17px;
-}
-
-.formulas_table .denominator {
-	border-top: black 1px solid;
-}
-
-.equals {
-	display: none;
-}
-
-.paddingbottom {
-
-	padding-bottom: 10px;
-
-}
